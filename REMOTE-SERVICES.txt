@@ -1,0 +1,40 @@
+REMOTE SERVICES — Zeko Core
+===========================
+
+This file documents every outbound network request performed by Zeko Core's
+own code. It complements the plugin readme.txt "External services" section.
+
+-------------------------------------------------------------------------------
+1. Zeko license server (server-side, optional)
+-------------------------------------------------------------------------------
+Endpoint : POST https://ozconsultz.com/  (default; overridable via the
+           ZEKO_LICENSE_SERVER constant or the 'zeko_license_server' filter)
+           with query arg ?zeko_license_action=<action>, where action is
+           activate | deactivate | check | complete | moderate (and 'package'
+           when the zeko-pro companion requests an update check).
+Code     : includes/class-zeko-license.php (Zeko_License::request(), lines
+           113-138; base_payload() lines 140-146; server_url() lines 56-59).
+Data sent (POST body / form fields):
+           - key        : the site's license key (admin-entered, option
+                          zeko_license_key)
+           - site       : home_url() of the site
+           - site_token : a random 32-char per-site token generated once
+                          (option zeko_license_site_token)
+           plus any action-specific fields (e.g. the zeko-pro updater sends
+           exactly the three fields above for 'package').
+When      : only when an administrator enters a license key and an action is
+           invoked (activate via the settings screen, status checks on a
+           12-hour transient, or the zeko-pro update check).
+Why       : entitlement/license validation and (for zeko-ai's cloud provider,
+           see zeko-ai/REMOTE-SERVICES.txt) hosted AI requests.
+Privacy   : the license key, home URL, and token are disclosed to the license
+           server operator. Everything is filterable: 'zeko_license_server'
+           can point the endpoint elsewhere and 'zeko_license_remote_request'
+           can suppress the network call entirely (used by tests).
+
+No other outbound HTTP requests are made by Zeko Core itself. Avatars are
+served by WordPress core's get_avatar() (Gravatar; see WP core's own privacy
+documentation) and are fetched by the visitor's browser, not by this plugin.
+
+Privacy-policy guidance: see the 'Third-party services' section contributed to
+Tools > Privacy by includes/class-zeko-core-privacy.php.

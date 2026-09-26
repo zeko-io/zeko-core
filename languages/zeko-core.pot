@@ -1,0 +1,945 @@
+# Copyright (C) 2026 Zeko Team
+# This file is distributed under the GNU General Public License v2.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: zeko-core 1.0.0\n"
+"Report-Msgid-Bugs-To: https://zeko.io\n"
+"POT-Creation-Date: 2026-09-25 08:10+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language-Team: Zeko Team\n"
+"X-Domain: zeko-core\n"
+"X-Generator: zeko make-pot\n"
+
+#: includes/class-zeko-core-activity.php:427
+msgid " ago"
+msgstr ""
+
+#. translators: %s: number of days
+#: includes/class-zeko-core-helpers.php:423
+#, php-format
+msgid "%s day ago"
+msgid_plural "%s days ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: number of hours
+#: includes/class-zeko-core-helpers.php:420
+#, php-format
+msgid "%s hour ago"
+msgid_plural "%s hours ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: number of minutes
+#: includes/class-zeko-core-helpers.php:416
+#, php-format
+msgid "%s min ago"
+msgid_plural "%s mins ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-zeko-core-privacy.php:50
+msgid "AI and search providers"
+msgstr ""
+
+#: includes/class-zeko-license.php:525
+msgid "Active"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:124
+msgid "Activity Feed"
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:145
+msgid "Activity date"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:89
+msgid "Activity logged successfully!"
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:141
+msgid "Activity record"
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:137
+msgid "Activity type"
+msgstr ""
+
+#: includes/class-zeko-core-notifications.php:516
+msgid "All"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:128
+msgid "All Activities"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:141
+msgid "All Time"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:130
+msgid "Answers Given"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:133
+msgid "Avatar Changes"
+msgstr ""
+
+#: includes/migrator/class-zeko-migrate-buddypress.php:77
+msgid "BuddyPress"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:153
+msgid "Clear Filters"
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:304
+#: includes/privacy/class-zeko-core-privacy-exporters.php:350
+msgid "Conversation"
+msgstr ""
+
+#: includes/class-zeko-core-messaging.php:805
+msgid "Conversation not found."
+msgstr ""
+
+#: includes/class-zeko-core-privacy.php:42
+msgid ""
+"Courses may embed video lessons hosted on YouTube or Vimeo. When you play "
+"such a lesson, the video provider receives your IP address and interaction "
+"data. If enabled, YouTube is used in its privacy-enhanced (“nocookie”) mode."
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:134
+msgid "Cover Photo Changes"
+msgstr ""
+
+#: includes/class-zeko-core-privacy.php:59
+msgid "Currency rates and webhook notifications"
+msgstr ""
+
+#: includes/class-zeko-core-assets.php:133
+msgid "Dark mode"
+msgstr ""
+
+#: includes/class-zeko-license.php:559
+msgid "Deactivate this site"
+msgstr ""
+
+#: includes/class-zeko-core-auth.php:206
+msgid "Email address already exists. Please choose another one."
+msgstr ""
+
+#: includes/class-zeko-core-privacy.php:38
+msgid "Email and notifications"
+msgstr ""
+
+#: includes/class-zeko-license.php:570
+msgid "Enable automatic cleanup"
+msgstr ""
+
+#: includes/class-zeko-license.php:537
+msgid "Expires"
+msgstr ""
+
+#: includes/class-zeko-core-app-data.php:567
+msgid "Failed to accept friend request."
+msgstr ""
+
+#: includes/class-zeko-core-app-data.php:596
+msgid "Failed to reject friend request."
+msgstr ""
+
+#: includes/class-zeko-core-app-data.php:629
+msgid "Failed to remove friend."
+msgstr ""
+
+#: includes/class-zeko-core-app-data.php:533
+msgid "Failed to send friend request."
+msgstr ""
+
+#: includes/class-zeko-core-messaging.php:572
+#: includes/class-zeko-core-messaging.php:725
+msgid "Failed to send message."
+msgstr ""
+
+#: includes/class-zeko-license.php:545
+msgid "Features"
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:507
+msgid "Field"
+msgstr ""
+
+#: includes/class-zeko-core-privacy.php:63
+msgid ""
+"Financial and booking records are retained as required by law and by this "
+"site’s record-keeping policy. You can request a copy of your data and ask "
+"for it to be erased from Tools > Export Personal Data / Erase Personal Data; "
+"dating and community data is deleted across all Zeko modules in response to "
+"an erasure request."
+msgstr ""
+
+#: includes/class-zeko-core-app-data.php:510
+msgid "Friendship request already exists or users are already friends/blocked."
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:149
+msgid "IP address"
+msgstr ""
+
+#: includes/class-zeko-core-privacy.php:36
+msgid ""
+"If you use the Zeko apps (dating profiles, businesses, courses, shops, "
+"wallet/payments, calendar bookings, and messaging), this site stores the "
+"information you provide in those profiles, including (where enabled) photos, "
+"interests, preferences, location, and conversation content."
+msgstr ""
+
+#: includes/class-zeko-core-privacy.php:57
+msgid ""
+"If your administrator enables it, you may choose to import your profile from "
+"a third-party provider (for example “Apply with LinkedIn”). The provider "
+"then shares the basic profile fields you consent to (such as name, email, "
+"and photo) with this site, and those fields are stored on your account here."
+msgstr ""
+
+#: includes/class-zeko-core-privacy.php:48
+msgid ""
+"If your administrator enters a Zeko license key, the site sends the license "
+"key, this site’s home address (URL), and a random per-site token to the Zeko "
+"license server to activate the license, check its status, and, when the Zeko "
+"PRO companion is active, look up premium updates."
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:80
+msgid "Invalid activity data."
+msgstr ""
+
+#: includes/class-zeko-core-messaging.php:592
+#: includes/class-zeko-core-messaging.php:744
+#: includes/class-zeko-core-messaging.php:798
+msgid "Invalid conversation."
+msgstr ""
+
+#: includes/class-zeko-core-messaging.php:548
+#: includes/class-zeko-core-messaging.php:702
+msgid "Invalid message data."
+msgstr ""
+
+#: includes/class-zeko-core-assets.php:151
+msgid "Invalid theme preference."
+msgstr ""
+
+#: includes/class-zeko-core-privacy.php:54
+msgid ""
+"Job and business listings that include a free-text location may be geocoded "
+"into coordinates by sending that location string to the public Nominatim "
+"service of OpenStreetMap. Only the location string is sent, and the result "
+"is cached locally."
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:144
+msgid "Last 30 Days"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:143
+msgid "Last 7 Days"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:145
+msgid "Last Year"
+msgstr ""
+
+#: includes/class-zeko-core-privacy.php:41
+msgid "Lesson videos"
+msgstr ""
+
+#: includes/class-zeko-core-privacy.php:47
+msgid "License and update service"
+msgstr ""
+
+#: includes/class-zeko-license.php:494
+msgid "License deactivated on this site."
+msgstr ""
+
+#: includes/class-zeko-license.php:501 includes/class-zeko-license.php:517
+msgid "License key"
+msgstr ""
+
+#: includes/class-zeko-license.php:484
+msgid "License key saved."
+msgstr ""
+
+#: includes/class-zeko-core-assets.php:130
+msgid "Light mode"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:162
+msgid "Load More"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:159
+msgid "Loading activities..."
+msgstr ""
+
+#: includes/class-zeko-core-messages-widget.php:71
+#: includes/class-zeko-core-messages-widget.php:122
+#: includes/class-zeko-core-notifications.php:532
+#: includes/class-zeko-core-notifications.php:592
+msgid "Loading..."
+msgstr ""
+
+#: includes/class-zeko-core-privacy.php:53
+msgid "Location geocoding"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:135
+msgid "Logins"
+msgstr ""
+
+#: includes/class-zeko-core-emails.php:154
+msgid "Manage email preferences"
+msgstr ""
+
+#: includes/class-zeko-core-notifications.php:533
+msgid "Mark all as read"
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:362
+msgid "Message"
+msgstr ""
+
+#: includes/class-zeko-core-messaging.php:566
+#: includes/class-zeko-core-messaging.php:720
+msgid "Message sent successfully!"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:131
+#: includes/class-zeko-core-messages-widget.php:59
+#: includes/class-zeko-core-messages-widget.php:67
+msgid "Messages"
+msgstr ""
+
+#: includes/class-zeko-core-messages-widget.php:129
+msgid "No conversations yet"
+msgstr ""
+
+#: includes/class-zeko-core-messaging.php:946
+msgid "No conversations yet."
+msgstr ""
+
+#: includes/class-zeko-core-upload.php:127
+msgid "No file was provided."
+msgstr ""
+
+#: includes/class-zeko-license.php:203 includes/class-zeko-license.php:239
+#: includes/class-zeko-license.php:275
+msgid "No license key configured."
+msgstr ""
+
+#: includes/class-zeko-core-messaging.php:613
+msgid "No messages yet. Start the conversation!"
+msgstr ""
+
+#: includes/class-zeko-core-notifications.php:599
+msgid "No notifications yet"
+msgstr ""
+
+#: includes/class-zeko-core-messaging.php:673
+msgid "No users found."
+msgstr ""
+
+#: includes/class-zeko-core-notifications.php:363
+msgid "Not logged in."
+msgstr ""
+
+#: includes/class-zeko-core-notifications.php:509
+#: includes/class-zeko-core-notifications.php:514
+msgid "Notifications"
+msgstr ""
+
+#: includes/class-zeko-core-notifications.php:437
+msgid "Notifications marked as read."
+msgstr ""
+
+#: includes/class-zeko-core-auth.php:216
+msgid "Password must be at least 8 characters long."
+msgstr ""
+
+#: includes/class-zeko-core-auth.php:211
+msgid "Passwords do not match."
+msgstr ""
+
+#: includes/class-zeko-license.php:504
+msgid ""
+"Paste the key supplied with your Zeko PRO subscription. Save it here and "
+"check the status below — paid features activate automatically."
+msgstr ""
+
+#: includes/class-zeko-core-privacy.php:44
+msgid "Payments"
+msgstr ""
+
+#: includes/class-zeko-license.php:458
+msgid "Permission denied."
+msgstr ""
+
+#: includes/class-zeko-core-messaging.php:643
+msgid "Please enter a search term."
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:116
+#: includes/class-zeko-core-activity.php:335
+msgid "Please log in to view the activity feed."
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:443
+msgid "Position"
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:475
+msgid "Preference"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:132
+msgid "Profile Updates"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:129
+msgid "Questions Asked"
+msgstr ""
+
+#: includes/class-zeko-core-ajax.php:84
+#: includes/class-zeko-core-rest-base.php:113
+msgid "Rate limit exceeded. Please try again later."
+msgstr ""
+
+#: includes/class-zeko-core-messaging.php:917
+msgid "Read"
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:358
+msgid "Recipient"
+msgstr ""
+
+#: includes/class-zeko-core-messaging.php:554
+#: includes/class-zeko-core-messaging.php:708
+msgid "Recipient not found."
+msgstr ""
+
+#: includes/class-zeko-core-auth.php:258
+msgid ""
+"Registration successful, but automatic login failed. Please log in manually."
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:136
+msgid "Registrations"
+msgstr ""
+
+#: includes/class-zeko-license.php:549
+msgid "Remark"
+msgstr ""
+
+#: includes/class-zeko-license.php:578
+msgid "Retain Zeko activity logs for (days)"
+msgstr ""
+
+#: includes/class-zeko-core-privacy.php:62
+msgid "Retention, export, and erasure"
+msgstr ""
+
+#: includes/class-zeko-license.php:508
+msgid "Save license key"
+msgstr ""
+
+#: includes/class-zeko-license.php:585
+msgid "Save privacy settings"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:150
+msgid "Search"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:149
+msgid "Search activities..."
+msgstr ""
+
+#: includes/class-zeko-core-ajax.php:79
+msgid "Security check failed."
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:354
+msgid "Sender"
+msgstr ""
+
+#: includes/class-zeko-core-messaging.php:179
+msgid "Sent a message."
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:366
+msgid "Sent at"
+msgstr ""
+
+#. translators: %s: site name
+#: includes/class-zeko-core-emails.php:133
+#, php-format
+msgid "Sent by %s"
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:543
+msgid "Setting"
+msgstr ""
+
+#: includes/class-zeko-license.php:541
+msgid "Site"
+msgstr ""
+
+#: includes/class-zeko-core-privacy.php:56
+msgid "Social sign-in"
+msgstr ""
+
+#: includes/class-zeko-license.php:513 includes/class-zeko-license.php:521
+#: includes/privacy/class-zeko-core-privacy-exporters.php:316
+#: includes/privacy/class-zeko-core-privacy-exporters.php:407
+#: includes/privacy/class-zeko-core-privacy-exporters.php:447
+msgid "Status"
+msgstr ""
+
+#: includes/class-zeko-core-assets.php:136
+msgid "System theme"
+msgstr ""
+
+#: includes/class-zeko-core-privacy.php:51
+msgid ""
+"The AI assistant features are optional. When your administrator connects an "
+"AI provider (for example OpenAI, Anthropic, OpenRouter, Gemini, Groq, or "
+"DeepSeek), the prompts and conversation content you send, together with any "
+"personal memory or personal-search context you have turned on, are "
+"transmitted to that provider to generate responses. If web search is "
+"enabled, your search queries are sent to the configured search provider. "
+"When the agent’s world-knowledge setting is on, factually answered questions "
+"may send a page-title guess to Wikipedia. If the built-in cloud provider is "
+"used, prompts are sent to Zeko’s own license server along with the license "
+"information described above. You should therefore not share sensitive "
+"personal information with the AI assistant unless you accept the provider’s "
+"handling of it."
+msgstr ""
+
+#: includes/class-zeko-core-upload.php:114
+msgid "The file failed to upload."
+msgstr ""
+
+#: includes/class-zeko-license.php:401
+msgid ""
+"The license server could not be reached. Status is cached; try again later."
+msgstr ""
+
+#: includes/class-zeko-license.php:581
+msgid "The retention window, between 30 and 1825 days."
+msgstr ""
+
+#: includes/class-zeko-core-privacy.php:39
+msgid ""
+"The site sends you email notifications (new matches, messages, booking "
+"confirmations, receipts) through the WordPress mail system. If your "
+"administrator configures a third-party email or SMTP provider, your email "
+"address and the content of those notifications are processed by that "
+"provider."
+msgstr ""
+
+#: includes/class-zeko-core-upload.php:121
+#: includes/class-zeko-core-upload.php:351
+msgid "The uploaded file exceeds the allowed size."
+msgstr ""
+
+#: includes/class-zeko-core-privacy.php:45
+msgid ""
+"The wallet feature stores transaction records and withdrawal payout details "
+"(for example a PayPal email, cryptocurrency wallet address, or bank account "
+"number) to process payments. Payment and payout data is processed by the "
+"gateway providers you select and kept for legal, accounting, and fraud-"
+"prevention purposes."
+msgstr ""
+
+#: includes/class-zeko-core-assets.php:129
+msgid "Theme preference"
+msgstr ""
+
+#: includes/class-zeko-core-upload.php:144
+msgid "This file type is not allowed here."
+msgstr ""
+
+#: includes/class-zeko-core-upload.php:356
+msgid "This file type is not allowed."
+msgstr ""
+
+#: includes/class-zeko-license.php:533
+msgid "Tier"
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:439
+msgid "Title"
+msgstr ""
+
+#: includes/class-zeko-core-privacy.php:60
+msgid ""
+"To display prices in different currencies, the site may fetch current "
+"exchange rates from a public rates service; only the base currency code is "
+"sent, not personal data. If your administrator enables outbound webhook "
+"notifications, payment or event records may be sent to the administrator-"
+"configured webhook addresses."
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:142
+msgid "Today"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:412
+#: includes/class-zeko-core-activity.php:495
+#: includes/class-zeko-core-activity.php:506
+#: includes/class-zeko-core-activity.php:517
+#: includes/class-zeko-core-messaging.php:498
+#: includes/class-zeko-core-messaging.php:891
+msgid "Unknown"
+msgstr ""
+
+#: includes/class-zeko-core-upload.php:110
+msgid "Upload feature is not configured."
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:308
+msgid "User 1"
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:312
+msgid "User 2"
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:399
+msgid "User A"
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:403
+msgid "User B"
+msgstr ""
+
+#: includes/class-zeko-core-messaging.php:818
+msgid "User not found."
+msgstr ""
+
+#: includes/class-zeko-core-auth.php:201
+msgid "Username already exists. Please choose another one."
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:479
+#: includes/privacy/class-zeko-core-privacy-exporters.php:511
+#: includes/privacy/class-zeko-core-privacy-exporters.php:547
+msgid "Value"
+msgstr ""
+
+#: includes/class-zeko-core-messages-widget.php:68
+msgid "View all"
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:515
+msgid "Visibility"
+msgstr ""
+
+#: includes/class-zeko-license.php:574
+msgid ""
+"When enabled, older auth/forensics activity-log rows are deleted by the "
+"daily cleanup."
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:435
+msgid "Widget type"
+msgstr ""
+
+#: includes/class-zeko-core-rest-base.php:94
+msgid "You can only access your own resources."
+msgstr ""
+
+#: includes/class-zeko-core-app-data.php:506
+msgid "You cannot send a friend request to yourself."
+msgstr ""
+
+#: includes/class-zeko-core-rest-base.php:77
+msgid "You do not have permission to do this."
+msgstr ""
+
+#: includes/class-zeko-core-messaging.php:598
+#: includes/class-zeko-core-messaging.php:750
+#: includes/class-zeko-core-messaging.php:810
+msgid "You do not have permission to view this conversation."
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:70
+#: includes/class-zeko-core-ajax.php:96
+#: includes/class-zeko-core-messaging.php:540
+#: includes/class-zeko-core-messaging.php:583
+#: includes/class-zeko-core-messaging.php:636
+#: includes/class-zeko-core-messaging.php:694
+#: includes/class-zeko-core-messaging.php:736
+#: includes/class-zeko-core-messaging.php:791
+#: includes/class-zeko-core-messaging.php:841
+#: includes/class-zeko-core-messaging.php:861
+#: includes/class-zeko-core-rest-base.php:60
+msgid "You must be logged in."
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:133
+msgid "Zeko Activity"
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:37
+#: includes/privacy/class-zeko-core-privacy-exporters.php:61
+msgid "Zeko Core data"
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:431
+#: includes/privacy/class-zeko-core-privacy-exporters.php:471
+msgid "Zeko Dashboard"
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:395
+msgid "Zeko Friendships"
+msgstr ""
+
+#: includes/class-zeko-license.php:431 includes/class-zeko-license.php:432
+#: includes/class-zeko-license.php:488
+msgid "Zeko License"
+msgstr ""
+
+#: includes/class-zeko-core-auth.php:78
+msgid "Zeko Member"
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:300
+#: includes/privacy/class-zeko-core-privacy-exporters.php:346
+msgid "Zeko Messages"
+msgstr ""
+
+#: includes/class-zeko-license.php:565
+msgid "Zeko Privacy"
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:503
+#: includes/privacy/class-zeko-core-privacy-exporters.php:539
+msgid "Zeko Profile"
+msgstr ""
+
+#: includes/privacy/class-zeko-core-privacy-exporters.php:42
+#: includes/privacy/class-zeko-core-privacy-exporters.php:66
+msgid "Zeko app data (messages, friendships, dashboard, profile)"
+msgstr ""
+
+#: includes/class-zeko-core-privacy.php:35
+msgid "Zeko ecosystem apps"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:475
+msgid "a field"
+msgstr ""
+
+#. translators: %s: friend name
+#: includes/class-zeko-core-activity.php:519
+#, php-format
+msgid "accepted a friendship request from %s."
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:521
+msgid "accepted a friendship request."
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:563
+msgid "answered a question."
+msgstr ""
+
+#. translators: 1: URL of the answer. 2: answer title
+#: includes/class-zeko-core-activity.php:558
+#, php-format
+msgid "answered a question: <a href=\"%1$s\">%2$s</a>."
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:542
+msgid "asked a new question."
+msgstr ""
+
+#. translators: 1: URL of the question. 2: question title
+#: includes/class-zeko-core-activity.php:537
+#, php-format
+msgid "asked a question: <a href=\"%1$s\">%2$s</a>."
+msgstr ""
+
+#: includes/class-zeko-core-helpers.php:250
+msgid "created a post"
+msgstr ""
+
+#: includes/class-zeko-core-helpers.php:222
+msgid "day"
+msgid_plural "days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-zeko-core-helpers.php:219
+msgid "hour"
+msgid_plural "hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-zeko-core-helpers.php:246
+msgid "joined Zeko"
+msgstr ""
+
+#: includes/class-zeko-core-helpers.php:412
+#: includes/class-zeko-core-messages-widget.php:114
+msgid "just now"
+msgstr ""
+
+#: includes/class-zeko-core-helpers.php:252
+msgid "liked something"
+msgstr ""
+
+#: includes/class-zeko-core-helpers.php:247
+msgid "logged in"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:467
+msgid "logged in."
+msgstr ""
+
+#: includes/class-zeko-core-helpers.php:248
+msgid "made a new friend"
+msgstr ""
+
+#: includes/class-zeko-core-helpers.php:216
+msgid "min"
+msgid_plural "min"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-zeko-core-helpers.php:216
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-zeko-core-helpers.php:225
+msgid "month"
+msgid_plural "months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-zeko-license.php:518
+msgid "not set"
+msgstr ""
+
+#. translators: %s: activity type
+#: includes/class-zeko-core-activity.php:568
+#, php-format
+msgid "performed an action: %s."
+msgstr ""
+
+#: includes/class-zeko-core-helpers.php:251
+msgid "posted a comment"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:464
+msgid "registered a new account."
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:489
+msgid "removed their cover photo."
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:483
+msgid "removed their profile avatar."
+msgstr ""
+
+#: includes/class-zeko-core-helpers.php:213
+msgid "sec"
+msgid_plural "secs"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-zeko-core-helpers.php:213
+msgid "second"
+msgid_plural "seconds"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: friend name
+#: includes/class-zeko-core-activity.php:508
+#, php-format
+msgid "sent a friendship request to %s."
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:510
+msgid "sent a friendship request."
+msgstr ""
+
+#: includes/class-zeko-core-helpers.php:249
+msgid "sent a message"
+msgstr ""
+
+#. translators: %s: recipient display name
+#: includes/class-zeko-core-activity.php:497
+#, php-format
+msgid "sent a message to %s."
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:499
+msgid "sent a message."
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:470
+msgid "some fields"
+msgstr ""
+
+#. translators: %s: profile field name
+#: includes/class-zeko-core-activity.php:477
+#, php-format
+msgid "updated their %s profile field."
+msgstr ""
+
+#: includes/class-zeko-core-helpers.php:244
+msgid "updated their avatar"
+msgstr ""
+
+#: includes/class-zeko-core-helpers.php:245
+msgid "updated their cover photo"
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:486
+msgid "updated their cover photo."
+msgstr ""
+
+#: includes/class-zeko-core-helpers.php:243
+msgid "updated their profile"
+msgstr ""
+
+#. translators: %s: updated profile fields
+#: includes/class-zeko-core-activity.php:472
+#, php-format
+msgid "updated their profile (%s)."
+msgstr ""
+
+#: includes/class-zeko-core-activity.php:480
+msgid "updated their profile avatar."
+msgstr ""
+
+#: includes/class-zeko-core-helpers.php:228
+msgid "year"
+msgid_plural "years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-zeko-license.php:538 includes/class-zeko-license.php:542
+#: includes/class-zeko-license.php:550
+msgid "—"
+msgstr ""
+
