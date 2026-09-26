@@ -1,5 +1,23 @@
-.DS_Store
-Thumbs.db
-*.log
-wordpress/
-*.sqlite
+# Generated from .distignore - release zip, GitHub repo and dist build share this set.
+.distignore
+# Dev tooling & files excluded from the release ZIP (built with `wp dist-archive`
+# or any .distignore-aware packaging tool).
+/.githooks
+/tests
+.phpunit.cache
+.phpunit.result.cache
+phpunit.xml
+phpunit.xml.dist
+composer.json
+composer.lock
+phpcs.xml
+phpcs.xml.dist
+.phpcs.xml.dist
+make-pot.php
+setup-pages.php
+TODO.md
+*TODO*.md
+ATS_FIX_PLAN.md
+CHANGELOG.md
+CHANGELOG.txt
+README.md
