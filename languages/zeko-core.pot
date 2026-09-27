@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zeko-core 1.0.0\n"
 "Report-Msgid-Bugs-To: https://zeko.io\n"
-"POT-Creation-Date: 2026-09-25 08:10+00:00\n"
+"POT-Creation-Date: 2026-09-27 15:06+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,6 +15,20 @@ msgstr ""
 
 #: includes/class-zeko-core-activity.php:427
 msgid " ago"
+msgstr ""
+
+#. translators: %d: subscriber count.
+#: includes/class-zeko-core-newsletter.php:721
+#, php-format
+msgid "%d subscriber"
+msgid_plural "%d subscribers"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: capability slug not in the known catalog.
+#: includes/class-zeko-license.php:642
+#, php-format
+msgid "%s (custom capability)"
 msgstr ""
 
 #. translators: %s: number of days
@@ -45,7 +59,16 @@ msgstr[1] ""
 msgid "AI and search providers"
 msgstr ""
 
-#: includes/class-zeko-license.php:525
+#: includes/class-zeko-core-newsletter.php:610
+#: includes/class-zeko-core-newsletter.php:627
+msgid "API key"
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:48
+msgid "Academy"
+msgstr ""
+
+#: includes/class-zeko-license.php:603
 msgid "Active"
 msgstr ""
 
@@ -69,7 +92,13 @@ msgstr ""
 msgid "Activity type"
 msgstr ""
 
-#: includes/class-zeko-core-notifications.php:516
+#: includes/class-zeko-core-pro.php:32
+msgid "Advanced content presets and per-role cost quotas."
+msgstr ""
+
+#: includes/class-zeko-core-notifications-widget.php:95
+#: includes/class-zeko-core-notifications-widget.php:193
+#: includes/class-zeko-core-notifications.php:534
 msgid "All"
 msgstr ""
 
@@ -81,16 +110,42 @@ msgstr ""
 msgid "All Time"
 msgstr ""
 
+#: includes/class-zeko-core-pro.php:44
+msgid "Answer analytics, AI quality suggestions, and related-questions widget."
+msgstr ""
+
 #: includes/class-zeko-core-activity.php:130
 msgid "Answers Given"
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:36
+msgid "Applicant Tracking"
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:56
+msgid "Availability blocks, video session links, and recurring sessions."
 msgstr ""
 
 #: includes/class-zeko-core-activity.php:133
 msgid "Avatar Changes"
 msgstr ""
 
+#: includes/class-zeko-core-newsletter.php:154
+msgid "Brevo (Sendinblue)"
+msgstr ""
+
 #: includes/migrator/class-zeko-migrate-buddypress.php:77
 msgid "BuddyPress"
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:90
+msgid "Business Pro"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:586
+msgid ""
+"Choose where the subscriber list lives and how broadcast email is delivered. "
+"The built-in SMTP relay replaces a separate SMTP plugin."
 msgstr ""
 
 #: includes/class-zeko-core-activity.php:153
@@ -121,12 +176,32 @@ msgstr ""
 msgid "Currency rates and webhook notifications"
 msgstr ""
 
+#: includes/class-zeko-core-newsletter.php:202
+msgid "Custom SMTP"
+msgstr ""
+
 #: includes/class-zeko-core-assets.php:133
 msgid "Dark mode"
 msgstr ""
 
-#: includes/class-zeko-license.php:559
+#: includes/class-zeko-license.php:666
 msgid "Deactivate this site"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:641
+msgid "Delivery relay (SMTP)"
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:50
+msgid "Drip content, PDF certificates, and instructor earnings."
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:196
+msgid "Elastic Email"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:732
+msgid "Email"
 msgstr ""
 
 #: includes/class-zeko-core-auth.php:206
@@ -137,27 +212,39 @@ msgstr ""
 msgid "Email and notifications"
 msgstr ""
 
-#: includes/class-zeko-license.php:570
+#: includes/class-zeko-license.php:677
 msgid "Enable automatic cleanup"
 msgstr ""
 
-#: includes/class-zeko-license.php:537
+#: includes/class-zeko-core-newsletter.php:674
+msgid "Encryption"
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:68
+msgid "Escrow auto-release, verification badges, and dispute SLAs."
+msgstr ""
+
+#: includes/class-zeko-license.php:615
 msgid "Expires"
 msgstr ""
 
-#: includes/class-zeko-core-app-data.php:567
+#: includes/class-zeko-core-newsletter.php:726
+msgid "Export CSV"
+msgstr ""
+
+#: includes/class-zeko-core-app-data.php:569
 msgid "Failed to accept friend request."
 msgstr ""
 
-#: includes/class-zeko-core-app-data.php:596
+#: includes/class-zeko-core-app-data.php:598
 msgid "Failed to reject friend request."
 msgstr ""
 
-#: includes/class-zeko-core-app-data.php:629
+#: includes/class-zeko-core-app-data.php:631
 msgid "Failed to remove friend."
 msgstr ""
 
-#: includes/class-zeko-core-app-data.php:533
+#: includes/class-zeko-core-app-data.php:534
 msgid "Failed to send friend request."
 msgstr ""
 
@@ -166,7 +253,7 @@ msgstr ""
 msgid "Failed to send message."
 msgstr ""
 
-#: includes/class-zeko-license.php:545
+#: includes/class-zeko-license.php:623
 msgid "Features"
 msgstr ""
 
@@ -183,8 +270,24 @@ msgid ""
 "an erasure request."
 msgstr ""
 
+#: includes/class-zeko-core-pro.php:66
+msgid "Freelance Pro"
+msgstr ""
+
 #: includes/class-zeko-core-app-data.php:510
 msgid "Friendship request already exists or users are already friends/blocked."
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:696
+msgid "From email (optional)"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:702
+msgid "From name (optional)"
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:38
+msgid "Hiring pipeline, unlimited active posts, and employer brand pages."
 msgstr ""
 
 #: includes/privacy/class-zeko-core-privacy-exporters.php:149
@@ -254,6 +357,10 @@ msgstr ""
 msgid "Last Year"
 msgstr ""
 
+#: includes/class-zeko-core-pro.php:155
+msgid "Learn about Zeko PRO"
+msgstr ""
+
 #: includes/class-zeko-core-privacy.php:41
 msgid "Lesson videos"
 msgstr ""
@@ -262,20 +369,41 @@ msgstr ""
 msgid "License and update service"
 msgstr ""
 
-#: includes/class-zeko-license.php:494
+#: includes/class-zeko-license.php:554
 msgid "License deactivated on this site."
 msgstr ""
 
-#: includes/class-zeko-license.php:501 includes/class-zeko-license.php:517
+#: includes/class-zeko-license.php:579 includes/class-zeko-license.php:595
 msgid "License key"
 msgstr ""
 
-#: includes/class-zeko-license.php:484
+#: includes/class-zeko-license.php:544
 msgid "License key saved."
+msgstr ""
+
+#: includes/class-zeko-license.php:557
+msgid "License status re-checked against the server."
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:74
+msgid "License-key generation, wallet-credit refunds, and checkout analytics."
 msgstr ""
 
 #: includes/class-zeko-core-assets.php:130
 msgid "Light mode"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:616
+#: includes/class-zeko-core-newsletter.php:633
+msgid "List ID"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:595
+msgid "List provider"
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:92
+msgid "Listing claims/verification and advanced directory filters."
 msgstr ""
 
 #: includes/class-zeko-core-activity.php:162
@@ -288,8 +416,10 @@ msgstr ""
 
 #: includes/class-zeko-core-messages-widget.php:71
 #: includes/class-zeko-core-messages-widget.php:122
-#: includes/class-zeko-core-notifications.php:532
-#: includes/class-zeko-core-notifications.php:592
+#: includes/class-zeko-core-notifications-widget.php:98
+#: includes/class-zeko-core-notifications-widget.php:224
+#: includes/class-zeko-core-notifications.php:550
+#: includes/class-zeko-core-notifications.php:610
 msgid "Loading..."
 msgstr ""
 
@@ -301,12 +431,55 @@ msgstr ""
 msgid "Logins"
 msgstr ""
 
+#: includes/class-zeko-core-newsletter.php:600
+msgid "Mailchimp (API)"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:365
+msgid "Mailchimp API key is not configured."
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:623
+msgid "Mailchimp credentials"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:602
+msgid ""
+"Mailchimp has no standalone SMTP relay (transactional email moved to "
+"Mandrill), so it is offered here as a list provider while delivery uses the "
+"relay below."
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:368
+msgid "Mailchimp list ID is not configured."
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:416
+msgid "Mailchimp responded unexpectedly."
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:160
+msgid "Mailgun"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:166
+msgid "Mailjet"
+msgstr ""
+
 #: includes/class-zeko-core-emails.php:154
 msgid "Manage email preferences"
 msgstr ""
 
-#: includes/class-zeko-core-notifications.php:533
+#: includes/class-zeko-core-notifications.php:551
 msgid "Mark all as read"
+msgstr ""
+
+#: includes/class-zeko-core-notifications-widget.php:92
+msgid "Mark all read"
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:54
+msgid "Mentor Pro"
 msgstr ""
 
 #: includes/privacy/class-zeko-core-privacy-exporters.php:362
@@ -336,8 +509,8 @@ msgstr ""
 msgid "No file was provided."
 msgstr ""
 
-#: includes/class-zeko-license.php:203 includes/class-zeko-license.php:239
-#: includes/class-zeko-license.php:275
+#: includes/class-zeko-license.php:204 includes/class-zeko-license.php:240
+#: includes/class-zeko-license.php:276
 msgid "No license key configured."
 msgstr ""
 
@@ -345,25 +518,40 @@ msgstr ""
 msgid "No messages yet. Start the conversation!"
 msgstr ""
 
-#: includes/class-zeko-core-notifications.php:599
+#: includes/class-zeko-core-notifications-widget.php:233
+#: includes/class-zeko-core-notifications.php:617
 msgid "No notifications yet"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:748
+msgid "No subscribers yet."
 msgstr ""
 
 #: includes/class-zeko-core-messaging.php:673
 msgid "No users found."
 msgstr ""
 
+#: includes/class-zeko-core-newsletter.php:679
+msgid "None"
+msgstr ""
+
 #: includes/class-zeko-core-notifications.php:363
 msgid "Not logged in."
 msgstr ""
 
-#: includes/class-zeko-core-notifications.php:509
-#: includes/class-zeko-core-notifications.php:514
+#: includes/class-zeko-core-notifications-widget.php:83
+#: includes/class-zeko-core-notifications-widget.php:91
+#: includes/class-zeko-core-notifications.php:527
+#: includes/class-zeko-core-notifications.php:532
 msgid "Notifications"
 msgstr ""
 
-#: includes/class-zeko-core-notifications.php:437
+#: includes/class-zeko-core-notifications.php:448
 msgid "Notifications marked as read."
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:690
+msgid "Password / API key"
 msgstr ""
 
 #: includes/class-zeko-core-auth.php:216
@@ -374,7 +562,7 @@ msgstr ""
 msgid "Passwords do not match."
 msgstr ""
 
-#: includes/class-zeko-license.php:504
+#: includes/class-zeko-license.php:582
 msgid ""
 "Paste the key supplied with your Zeko PRO subscription. Save it here and "
 "check the status below — paid features activate automatically."
@@ -384,17 +572,42 @@ msgstr ""
 msgid "Payments"
 msgstr ""
 
-#: includes/class-zeko-license.php:458
+#: includes/class-zeko-core-pro.php:78
+msgid "Payments Pro"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:496
+#: includes/class-zeko-core-newsletter.php:526
+#: includes/class-zeko-core-newsletter.php:549
+#: includes/class-zeko-license.php:496 includes/class-zeko-license.php:518
 msgid "Permission denied."
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:62
+msgid "Photo/video verification and Spotlight profile boosts."
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:643
+msgid ""
+"Pick a relay preset to autofill host/port/encryption, then enter the "
+"credentials. Leave the host empty to use the default WordPress mailer."
 msgstr ""
 
 #: includes/class-zeko-core-messaging.php:643
 msgid "Please enter a search term."
 msgstr ""
 
+#: includes/class-zeko-core-newsletter.php:261
+msgid "Please enter a valid email address."
+msgstr ""
+
 #: includes/class-zeko-core-activity.php:116
 #: includes/class-zeko-core-activity.php:335
 msgid "Please log in to view the activity feed."
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:668
+msgid "Port"
 msgstr ""
 
 #: includes/privacy/class-zeko-core-privacy-exporters.php:443
@@ -405,8 +618,20 @@ msgstr ""
 msgid "Preference"
 msgstr ""
 
+#: includes/class-zeko-core-pro.php:30
+msgid "Premium AI writer"
+msgstr ""
+
 #: includes/class-zeko-core-activity.php:132
 msgid "Profile Updates"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:647
+msgid "Provider preset"
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:42
+msgid "Q&A Analytics"
 msgstr ""
 
 #: includes/class-zeko-core-activity.php:129
@@ -416,6 +641,10 @@ msgstr ""
 #: includes/class-zeko-core-ajax.php:84
 #: includes/class-zeko-core-rest-base.php:113
 msgid "Rate limit exceeded. Please try again later."
+msgstr ""
+
+#: includes/class-zeko-license.php:570 includes/class-zeko-license.php:661
+msgid "Re-check status"
 msgstr ""
 
 #: includes/class-zeko-core-messaging.php:917
@@ -440,11 +669,24 @@ msgstr ""
 msgid "Registrations"
 msgstr ""
 
-#: includes/class-zeko-license.php:549
+#: includes/class-zeko-license.php:651
 msgid "Remark"
 msgstr ""
 
-#: includes/class-zeko-license.php:578
+#: includes/class-zeko-core-newsletter.php:733
+#: includes/class-zeko-core-newsletter.php:741
+msgid "Remove"
+msgstr ""
+
+#: includes/class-zeko-license.php:569
+msgid "Renew your license"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:190
+msgid "Resend"
+msgstr ""
+
+#: includes/class-zeko-license.php:685
 msgid "Retain Zeko activity logs for (days)"
 msgstr ""
 
@@ -452,12 +694,40 @@ msgstr ""
 msgid "Retention, export, and erasure"
 msgstr ""
 
-#: includes/class-zeko-license.php:508
+#: includes/class-zeko-core-pro.php:84
+msgid "Rewards Pro"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:662
+msgid "SMTP host"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:172
+msgid "SMTP2GO"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:678
+msgid "SSL/TLS"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:677
+msgid "STARTTLS"
+msgstr ""
+
+#: includes/class-zeko-license.php:586
 msgid "Save license key"
 msgstr ""
 
-#: includes/class-zeko-license.php:585
+#: includes/class-zeko-license.php:692
 msgid "Save privacy settings"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:709
+msgid "Save settings"
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:80
+msgid "Scheduled payouts, PDF receipts, and escrow/webhook endpoints."
 msgstr ""
 
 #: includes/class-zeko-core-activity.php:150
@@ -472,8 +742,40 @@ msgstr ""
 msgid "Security check failed."
 msgstr ""
 
+#: includes/class-zeko-core-newsletter.php:598
+msgid "Self-hosted (local list)"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:715
+msgid "Self-hosted subscribers"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:711
+msgid "Send test email"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:184
+msgid "SendPulse"
+msgstr ""
+
 #: includes/privacy/class-zeko-core-privacy-exporters.php:354
 msgid "Sender"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:599
+msgid "Sendinblue / Brevo (API)"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:308
+msgid "Sendinblue API key is not configured."
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:606
+msgid "Sendinblue credentials"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:347
+msgid "Sendinblue responded unexpectedly."
 msgstr ""
 
 #: includes/class-zeko-core-messaging.php:179
@@ -494,7 +796,11 @@ msgstr ""
 msgid "Setting"
 msgstr ""
 
-#: includes/class-zeko-license.php:541
+#: includes/class-zeko-core-pro.php:72
+msgid "Shop Pro"
+msgstr ""
+
+#: includes/class-zeko-license.php:619
 msgid "Site"
 msgstr ""
 
@@ -502,15 +808,23 @@ msgstr ""
 msgid "Social sign-in"
 msgstr ""
 
-#: includes/class-zeko-license.php:513 includes/class-zeko-license.php:521
+#: includes/class-zeko-license.php:591 includes/class-zeko-license.php:599
 #: includes/privacy/class-zeko-core-privacy-exporters.php:316
 #: includes/privacy/class-zeko-core-privacy-exporters.php:407
 #: includes/privacy/class-zeko-core-privacy-exporters.php:447
 msgid "Status"
 msgstr ""
 
+#: includes/class-zeko-core-newsletter.php:592
+msgid "Subscriber provider"
+msgstr ""
+
 #: includes/class-zeko-core-assets.php:136
 msgid "System theme"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:487
+msgid "Test email sent."
 msgstr ""
 
 #: includes/class-zeko-core-privacy.php:51
@@ -533,12 +847,12 @@ msgstr ""
 msgid "The file failed to upload."
 msgstr ""
 
-#: includes/class-zeko-license.php:401
+#: includes/class-zeko-license.php:432
 msgid ""
 "The license server could not be reached. Status is cached; try again later."
 msgstr ""
 
-#: includes/class-zeko-license.php:581
+#: includes/class-zeko-license.php:688
 msgid "The retention window, between 30 and 1825 days."
 msgstr ""
 
@@ -577,7 +891,11 @@ msgstr ""
 msgid "This file type is not allowed."
 msgstr ""
 
-#: includes/class-zeko-license.php:533
+#: includes/class-zeko-core-newsletter.php:506
+msgid "This is a test email sent from Zeko Newsletter settings."
+msgstr ""
+
+#: includes/class-zeko-license.php:611
 msgid "Tier"
 msgstr ""
 
@@ -631,6 +949,10 @@ msgstr ""
 msgid "User not found."
 msgstr ""
 
+#: includes/class-zeko-core-newsletter.php:684
+msgid "Username"
+msgstr ""
+
 #: includes/class-zeko-core-auth.php:201
 msgid "Username already exists. Please choose another one."
 msgstr ""
@@ -641,6 +963,10 @@ msgstr ""
 msgid "Value"
 msgstr ""
 
+#: includes/class-zeko-core-pro.php:60
+msgid "Verified Dating"
+msgstr ""
+
 #: includes/class-zeko-core-messages-widget.php:68
 msgid "View all"
 msgstr ""
@@ -649,7 +975,11 @@ msgstr ""
 msgid "Visibility"
 msgstr ""
 
-#: includes/class-zeko-license.php:574
+#: includes/class-zeko-core-pro.php:86
+msgid "WP-CLI grants, points expiry, and reward-store webhooks."
+msgstr ""
+
+#: includes/class-zeko-license.php:681
 msgid ""
 "When enabled, older auth/forensics activity-log rows are deleted by the "
 "daily cleanup."
@@ -691,8 +1021,24 @@ msgstr ""
 msgid "You must be logged in."
 msgstr ""
 
+#. translators: %s: expiry date.
+#: includes/class-zeko-license.php:565
+#, php-format
+msgid ""
+"Your Zeko PRO license expired on %s. Premium modules stay installed but stop "
+"loading — the free plugins keep working."
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:31
+msgid "Zeko AI"
+msgstr ""
+
 #: includes/privacy/class-zeko-core-privacy-exporters.php:133
 msgid "Zeko Activity"
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:91
+msgid "Zeko Business"
 msgstr ""
 
 #: includes/privacy/class-zeko-core-privacy-exporters.php:37
@@ -705,17 +1051,37 @@ msgstr ""
 msgid "Zeko Dashboard"
 msgstr ""
 
+#: includes/class-zeko-core-pro.php:67
+msgid "Zeko Freelance"
+msgstr ""
+
 #: includes/privacy/class-zeko-core-privacy-exporters.php:395
 msgid "Zeko Friendships"
 msgstr ""
 
-#: includes/class-zeko-license.php:431 includes/class-zeko-license.php:432
-#: includes/class-zeko-license.php:488
+#: includes/class-zeko-core-pro.php:37
+msgid "Zeko Jobs"
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:49
+msgid "Zeko Learn"
+msgstr ""
+
+#: includes/class-zeko-license.php:469 includes/class-zeko-license.php:470
+#: includes/class-zeko-license.php:548
 msgid "Zeko License"
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:61
+msgid "Zeko Love"
 msgstr ""
 
 #: includes/class-zeko-core-auth.php:78
 msgid "Zeko Member"
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:55
+msgid "Zeko Mentor"
 msgstr ""
 
 #: includes/privacy/class-zeko-core-privacy-exporters.php:300
@@ -723,13 +1089,41 @@ msgstr ""
 msgid "Zeko Messages"
 msgstr ""
 
-#: includes/class-zeko-license.php:565
+#: includes/class-zeko-core-newsletter.php:465
+#: includes/class-zeko-core-newsletter.php:466
+#: includes/class-zeko-core-newsletter.php:585
+msgid "Zeko Newsletter"
+msgstr ""
+
+#. translators: %s: site name.
+#: includes/class-zeko-core-newsletter.php:503
+#, php-format
+msgid "Zeko Newsletter test from %s"
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:79
+msgid "Zeko Pay"
+msgstr ""
+
+#: includes/class-zeko-license.php:672
 msgid "Zeko Privacy"
 msgstr ""
 
 #: includes/privacy/class-zeko-core-privacy-exporters.php:503
 #: includes/privacy/class-zeko-core-privacy-exporters.php:539
 msgid "Zeko Profile"
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:43
+msgid "Zeko QA"
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:85
+msgid "Zeko Rewards"
+msgstr ""
+
+#: includes/class-zeko-core-pro.php:73
+msgid "Zeko Shop"
 msgstr ""
 
 #: includes/privacy/class-zeko-core-privacy-exporters.php:42
@@ -739,6 +1133,10 @@ msgstr ""
 
 #: includes/class-zeko-core-privacy.php:35
 msgid "Zeko ecosystem apps"
+msgstr ""
+
+#: includes/class-zeko-core-newsletter.php:178
+msgid "Zoho Mail"
 msgstr ""
 
 #: includes/class-zeko-core-activity.php:475
@@ -834,7 +1232,7 @@ msgid_plural "months"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-zeko-license.php:518
+#: includes/class-zeko-license.php:596
 msgid "not set"
 msgstr ""
 
@@ -938,8 +1336,8 @@ msgid_plural "years"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-zeko-license.php:538 includes/class-zeko-license.php:542
-#: includes/class-zeko-license.php:550
+#: includes/class-zeko-license.php:616 includes/class-zeko-license.php:620
+#: includes/class-zeko-license.php:629 includes/class-zeko-license.php:652
 msgid "—"
 msgstr ""
 
