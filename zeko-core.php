@@ -37,6 +37,7 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/class-zeko-core-nav.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/class-zeko-core-notifications.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/class-zeko-core-notifications-widget.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/class-zeko-core-emails.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/class-zeko-core-newsletter.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/class-zeko-core-ajax.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/class-zeko-core-assets.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/class-zeko-core-auth.php';
@@ -71,6 +72,7 @@ Zeko_Core_Assets::get_instance();
 Zeko_Core_Cron::get_instance();
 Zeko_Core_Messages_Widget::get_instance();
 Zeko_Core_Notifications_Widget::get_instance();
+Zeko_Core_Newsletter::get_instance();
 Zeko_License::get_instance()->init();
 Zeko_Core_Auth::get_instance();
 

@@ -527,6 +527,7 @@ final class Zeko_Core_App_Data {
 
 		if ( $result ) {
 			self::log_activity( $initiator_id, 'friendship_request_sent', array( 'friend_id' => $friend_id ) );
+			do_action( 'zeko_friendship_sent', $initiator_id, $friend_id );
 			return true;
 		}
 
@@ -561,6 +562,7 @@ final class Zeko_Core_App_Data {
 
 		if ( $result ) {
 			self::log_activity( $initiator_id, 'friendship_accepted', array( 'friend_id' => $friend_id ) );
+			do_action( 'zeko_friendship_accepted', $initiator_id, $friend_id );
 			return true;
 		}
 
