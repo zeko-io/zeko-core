@@ -370,6 +370,16 @@ final class Zeko_Core_Notifications {
 		$unread_by     = $this->get_unread_counts_by_module( $user_id );
 		$total_unread  = array_sum( $unread_by );
 
+		// Active source metadata (key => label/icon) so client tabs can be
+		// built server-side = only currently-active modules show up.
+		$source_meta = array();
+		foreach ( $this->get_sources() as $key => $cfg ) {
+			$source_meta[ $key ] = array(
+				'label' => $cfg['label'] ? $cfg['label'] : ucfirst( $key ),
+				'icon'  => $cfg['icon'],
+			);
+		}
+
 		// Enrich: actor data, human time, message fallback.
 		foreach ( $notifications as &$n ) {
 			$actor_id = (int) ( $n['actor_id'] ?? 0 );
@@ -414,6 +424,7 @@ final class Zeko_Core_Notifications {
 				'unread_count'  => $total_unread,
 				'total_unread'  => $total_unread,
 				'unread_by'     => $unread_by,
+				'sources'       => $source_meta,
 			)
 		);
 	}

@@ -91,6 +91,9 @@ final class Zeko_Core_Notifications_Widget {
 			<strong><?php esc_html_e( 'Notifications', 'zeko-core' ); ?></strong>
 			<a href="#" class="zeko-notif-markall" id="zeko-notif-markall"><?php esc_html_e( 'Mark all read', 'zeko-core' ); ?></a>
 		</div>
+		<div class="zeko-notif-tabs" id="zeko-notif-tabs">
+			<button type="button" class="zeko-notif-tab on" data-m=""><?php esc_html_e( 'All', 'zeko-core' ); ?></button>
+		</div>
 		<div class="zeko-notif-list" id="zeko-notif-list">
 			<div class="zeko-notif-load"><?php esc_html_e( 'Loading...', 'zeko-core' ); ?></div>
 		</div>
@@ -102,11 +105,18 @@ final class Zeko_Core_Notifications_Widget {
 .zeko-notif-toggle{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid var(--color-border);border-radius:var(--radius-pill);background:var(--color-bg-white);color:var(--color-text-secondary);cursor:pointer;position:relative;transition:all var(--transition-fast)}
 .zeko-notif-toggle:hover{color:var(--color-text);border-color:var(--color-text-secondary)}
 .zeko-notif-badge{position:absolute;top:-6px;right:-6px;background:var(--color-danger);color:#fff;font-size:10px;font-weight:700;min-width:16px;height:16px;line-height:16px;text-align:center;border-radius:8px;padding:0 4px;border:2px solid var(--color-bg-white)}
-.zeko-notif-drop{display:none;position:absolute;top:calc(100% + 8px);right:0;width:340px;max-height:420px;background:var(--color-bg-white);border:1px solid var(--color-border);border-radius:12px;box-shadow:var(--shadow-xl);overflow:hidden;z-index:100000;flex-direction:column}
+.zeko-notif-drop{display:none;position:absolute;top:calc(100% + 8px);right:0;width:360px;max-height:460px;background:var(--color-bg-white);border:1px solid var(--color-border);border-radius:12px;box-shadow:var(--shadow-xl);overflow:hidden;z-index:100000;flex-direction:column}
 .zeko-notif-drop.open{display:flex}
 .zeko-notif-head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--color-border);font-size:14px;color:var(--color-text)}
 .zeko-notif-markall{font-size:12px;color:var(--color-primary);text-decoration:none;white-space:nowrap}
 .zeko-notif-markall:hover{text-decoration:underline}
+.zeko-notif-tabs{display:flex;gap:6px;padding:10px 12px;border-bottom:1px solid var(--color-border);overflow-x:auto;scrollbar-width:none}
+.zeko-notif-tabs::-webkit-scrollbar{display:none}
+.zeko-notif-tab{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border:1px solid var(--color-border);border-radius:var(--radius-pill);background:var(--color-bg-muted);font-size:12px;font-weight:500;cursor:pointer;white-space:nowrap;color:var(--color-text-secondary);transition:all var(--transition-fast)}
+.zeko-notif-tab:hover{background:var(--color-bg-white);color:var(--color-text);border-color:var(--color-text-secondary)}
+.zeko-notif-tab.on{background:var(--color-primary);color:var(--color-text-on-primary);border-color:var(--color-primary)}
+.zeko-notif-tab-count{display:inline-flex;align-items:center;justify-content:center;min-width:16px;height:16px;line-height:1;padding:0 4px;border-radius:8px;font-size:10px;font-weight:700;background:var(--color-bg-muted);color:var(--color-text-secondary)}
+.zeko-notif-tab.on .zeko-notif-tab-count{background:rgba(255,255,255,.25);color:#fff}
 .zeko-notif-list{max-height:360px;overflow-y:auto}
 .zeko-notif-load{text-align:center;padding:28px;color:var(--color-text-muted);font-size:13px}
 .zeko-notif-empty{text-align:center;padding:36px 20px;color:var(--color-text-muted);font-size:13px}
@@ -130,6 +140,7 @@ var a='<?php echo esc_js( $ajax_url ); ?>',
 var toggle = document.getElementById('zeko-notif-toggle');
 var drop   = document.getElementById('zeko-notif-drop');
 var list   = document.getElementById('zeko-notif-list');
+var tabs   = document.getElementById('zeko-notif-tabs');
 var badge  = document.getElementById('zeko-notif-badge');
 
 if (!toggle) return;
@@ -140,7 +151,7 @@ toggle.addEventListener('click', function(e) {
 	drop.classList.toggle('open');
 	toggle.setAttribute('aria-expanded', !wasOpen);
 	drop.setAttribute('aria-hidden', wasOpen);
-	if (!wasOpen && !loaded) { loadNotifications(); loaded = true; }
+	if (!wasOpen && !loaded) { load(''); loaded = true; }
 });
 
 document.addEventListener('click', function() {
@@ -160,6 +171,8 @@ document.getElementById('zeko-notif-markall').addEventListener('click', function
 			var items = list.querySelectorAll('.zeko-notif-item.unread');
 			for (var i = 0; i < items.length; i++) items[i].classList.remove('unread');
 			if (badge) { badge.style.display = 'none'; badge.textContent = '0'; }
+			var tcs = tabs.querySelectorAll('.zeko-notif-tab-count');
+			for (var j = 0; j < tcs.length; j++) tcs[j].parentNode.removeChild(tcs[j]);
 		}
 	});
 });
@@ -171,14 +184,52 @@ function esc(s) {
 	return d.innerHTML;
 }
 
-function loadNotifications() {
+function setTabs(sources, unreadBy) {
+	if (!tabs || !sources) return;
+	var all = tabs.querySelector('.zeko-notif-tab[data-m=""]');
+	if (all) {
+		var au = 0;
+		for (var k in unreadBy) au += unreadBy[k];
+		all.innerHTML = '<?php echo esc_js( __( 'All', 'zeko-core' ) ); ?>';
+		if (au > 0) all.appendChild(makeCount(au));
+	}
+	var keys = Object.keys(sources);
+	for (var i = 0; i < keys.length; i++) {
+		if (tabs.querySelector('.zeko-notif-tab[data-m="' + keys[i] + '"]')) continue;
+		var b = document.createElement('button');
+		b.type = 'button';
+		b.className = 'zeko-notif-tab';
+		b.setAttribute('data-m', keys[i]);
+		b.textContent = sources[keys[i]].label || keys[i];
+		var c = (unreadBy && unreadBy[keys[i]]) ? unreadBy[keys[i]] : 0;
+		if (c > 0) b.appendChild(makeCount(c));
+		b.addEventListener('click', function() {
+			var old = tabs.querySelector('.zeko-notif-tab.on');
+			if (old) old.classList.remove('on');
+			this.classList.add('on');
+			load(this.getAttribute('data-m') || '');
+		});
+		tabs.appendChild(b);
+	}
+}
+
+function makeCount(c) {
+	var s = document.createElement('span');
+	s.className = 'zeko-notif-tab-count';
+	s.textContent = c > 99 ? '99+' : c;
+	return s;
+}
+
+function load(m) {
 	list.innerHTML = '<div class="zeko-notif-load"><?php echo esc_js( __( 'Loading...', 'zeko-core' ) ); ?></div>';
 	var fd = new FormData();
 	fd.append('action', 'zeko_core_get_notifications');
 	fd.append('nonce', n);
-	fd.append('module', '');
+	fd.append('module', m);
 	fetch(a, {method:'POST', body:fd}).then(function(r){return r.json()}).then(function(res){
-		if (!res.success || !res.data.notifications.length) {
+		if (!res.success) return;
+		setTabs(res.data.sources, res.data.unread_by);
+		if (!res.data.notifications.length) {
 			list.innerHTML = '<div class="zeko-notif-empty"><span class="dashicons dashicons-bell"></span><p><?php echo esc_js( __( 'No notifications yet', 'zeko-core' ) ); ?></p></div>';
 			return;
 		}
