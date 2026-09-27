@@ -6,19 +6,20 @@
  * delivered, so site owners do not need a separate SMTP plugin:
  *
  *  1. Subscriber provider (where the list lives):
- *     - 'local'      (default) — self-hosted list stored in the
+ *     - 'local'       (default) — self-hosted list stored in the
  *                    `zeko_newsletter_subscribers` option, with admin list view,
  *                    CSV export, and count.
  *     - 'sendinblue' — list synced to Brevo/Sendinblue via API v3.
+ *     - 'mailchimp'  — list synced to Mailchimp via API v3.
  *  2. Delivery (SMTP relay): an optional built-in PHPMailer override with
  *     presets for generous/free-tier relays (Brevo, Mailgun, Mailjet, SMTP2GO,
- *     Zoho, SendPulse, Resend, Namecheap Private Email, ElasticEmail) and a
- *     custom option, so wp_mail() can be delivered through the selected relay
- *     without installing "WP Mail SMTP"-style plugins.
+ *     Zoho, SendPulse, Resend, ElasticEmail) and a custom option, so wp_mail()
+ *     can be delivered through the selected relay without installing
+ *     "WP Mail SMTP"-style plugins.
  *
- * Namecheap has no public subscriber-list API (their Email Marketing platform
- * is still early-access), so Namecheap is offered here as a delivery relay
- * preset while the list remains self-hosted.
+ * Mailchimp has no standalone SMTP relay (transactional email now lives in
+ * Mandrill), so Mailchimp is offered here as a subscriber-provider while
+ * delivery can still go through any relay preset below.
  *
  * @package Zeko_Core
  */
@@ -86,6 +87,9 @@ final class Zeko_Core_Newsletter {
 			// Sendinblue / Brevo (API v3).
 			'sb_api_key'     => '',
 			'sb_list_id'     => '',
+			// Mailchimp (API v3).
+			'mc_api_key'     => '',
+			'mc_list_id'     => '',
 			// Delivery relay (empty host = disabled).
 			'smtp_host'      => '',
 			'smtp_port'      => 587,
@@ -121,9 +125,11 @@ final class Zeko_Core_Newsletter {
 		$clean = $this->defaults();
 
 		if ( is_array( $input ) ) {
-			$clean['provider']       = in_array( ( $input['provider'] ?? '' ), array( 'local', 'sendinblue' ), true ) ? sanitize_key( $input['provider'] ) : 'local';
+			$clean['provider']       = in_array( ( $input['provider'] ?? '' ), array( 'local', 'sendinblue', 'mailchimp' ), true ) ? sanitize_key( $input['provider'] ) : 'local';
 			$clean['sb_api_key']     = sanitize_text_field( $input['sb_api_key'] ?? '' );
 			$clean['sb_list_id']     = sanitize_text_field( $input['sb_list_id'] ?? '' );
+			$clean['mc_api_key']     = sanitize_text_field( $input['mc_api_key'] ?? '' );
+			$clean['mc_list_id']     = sanitize_text_field( $input['mc_list_id'] ?? '' );
 			$clean['smtp_host']      = sanitize_text_field( $input['smtp_host'] ?? '' );
 			$clean['smtp_port']      = absint( $input['smtp_port'] ?? 587 );
 			$clean['smtp_enc']       = in_array( ( $input['smtp_enc'] ?? 'tls' ), array( 'none', 'tls', 'ssl' ), true ) ? sanitize_key( $input['smtp_enc'] ) : 'tls';
@@ -183,12 +189,6 @@ final class Zeko_Core_Newsletter {
 			'resend'       => array(
 				'label' => __( 'Resend', 'zeko-core' ),
 				'host'  => 'smtp.resend.com',
-				'port'  => 587,
-				'enc'   => 'tls',
-			),
-			'namecheap'    => array(
-				'label' => __( 'Namecheap Private Email', 'zeko-core' ),
-				'host'  => 'mail.privateemail.com',
 				'port'  => 587,
 				'enc'   => 'tls',
 			),
@@ -268,6 +268,10 @@ final class Zeko_Core_Newsletter {
 			return $this->subscribe_sendinblue( $email, $settings );
 		}
 
+		if ( 'mailchimp' === $provider ) {
+			return $this->subscribe_mailchimp( $email, $settings );
+		}
+
 		return $this->subscribe_local( $email );
 	}
 
@@ -341,6 +345,75 @@ final class Zeko_Core_Newsletter {
 		return new WP_Error(
 			'zeko_newsletter_provider',
 			$message ? $message : __( 'Sendinblue responded unexpectedly.', 'zeko-core' )
+		);
+	}
+
+	/**
+	 * Mailchimp API v3: create-or-update the contact in a list.
+	 *
+	 * Uses PUT to the member-subresource-hash endpoint (idempotent upsert).
+	 *
+	 * @return true|\WP_Error
+	 * @param string $email Email.
+	 * @param array  $settings Settings.
+	 */
+	private function subscribe_mailchimp( string $email, array $settings ) {
+		$api_key = trim( (string) $settings['mc_api_key'] );
+		$list_id = trim( (string) $settings['mc_list_id'] );
+
+		if ( ! $api_key ) {
+			return new WP_Error( 'zeko_newsletter_config', __( 'Mailchimp API key is not configured.', 'zeko-core' ) );
+		}
+		if ( ! $list_id ) {
+			return new WP_Error( 'zeko_newsletter_config', __( 'Mailchimp list ID is not configured.', 'zeko-core' ) );
+		}
+
+		// Data center is the suffix of the API key (e.g. 'us12' in '<key>-us12').
+		$server    = 'us1';
+		$key_parts = explode( '-', $api_key );
+		if ( isset( $key_parts[1] ) && $key_parts[1] ) {
+			$server = $key_parts[1];
+		}
+
+		$subscriber_hash = md5( strtolower( $email ) );
+		$url             = 'https://' . $server . '.api.mailchimp.com/3.0/lists/' . $list_id . '/members/' . $subscriber_hash;
+
+		$response = wp_remote_request(
+			$url,
+			array(
+				'method'  => 'PUT',
+				'timeout' => 15,
+				'headers' => array(
+					'Authorization' => 'Basic ' . base64_encode( 'apikey:' . $api_key ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode -- Required HTTP Basic auth for Mailchimp API v3.
+					'Content-Type'  => 'application/json',
+				),
+				'body'    => wp_json_encode(
+					array(
+						'email_address' => $email,
+						'status'        => 'subscribed',
+						'status_if_new' => 'subscribed',
+					)
+				),
+			)
+		);
+
+		if ( is_wp_error( $response ) ) {
+			return $response;
+		}
+
+		$code = (int) wp_remote_retrieve_response_code( $response );
+		// 200 ok (created or updated), 204 no content.
+		if ( 200 === $code || 204 === $code ) {
+			return true;
+		}
+
+		// 400 can mean an already-subscribed member; treat as success.
+		$data    = json_decode( (string) wp_remote_retrieve_body( $response ), true );
+		$message = isset( $data['title'] ) ? sanitize_text_field( $data['title'] ) : '';
+
+		return new WP_Error(
+			'zeko_newsletter_provider',
+			$message ? $message : __( 'Mailchimp responded unexpectedly.', 'zeko-core' )
 		);
 	}
 
@@ -524,8 +597,9 @@ final class Zeko_Core_Newsletter {
 							<select id="zeko-nl-provider" name="<?php echo esc_attr( self::SETTINGS_KEY . '[provider]' ); ?>">
 								<option value="local" <?php selected( $settings['provider'], 'local' ); ?>><?php esc_html_e( 'Self-hosted (local list)', 'zeko-core' ); ?></option>
 								<option value="sendinblue" <?php selected( $settings['provider'], 'sendinblue' ); ?>><?php esc_html_e( 'Sendinblue / Brevo (API)', 'zeko-core' ); ?></option>
+								<option value="mailchimp" <?php selected( $settings['provider'], 'mailchimp' ); ?>><?php esc_html_e( 'Mailchimp (API)', 'zeko-core' ); ?></option>
 							</select>
-							<p class="description"><?php esc_html_e( 'Namecheap has no subscriber-list API (early access), so it is offered below purely as a delivery relay with the list kept self-hosted.', 'zeko-core' ); ?></p>
+							<p class="description"><?php esc_html_e( 'Mailchimp has no standalone SMTP relay (transactional email moved to Mandrill), so it is offered here as a list provider while delivery uses the relay below.', 'zeko-core' ); ?></p>
 						</td>
 					</tr>
 					<tr id="zeko-nl-sbfields">
@@ -542,6 +616,23 @@ final class Zeko_Core_Newsletter {
 									<?php esc_html_e( 'List ID', 'zeko-core' ); ?>
 								</label><br />
 								<input id="zeko-nl-sblist" class="regular-text" type="text" name="<?php echo esc_attr( self::SETTINGS_KEY . '[sb_list_id]' ); ?>" value="<?php echo esc_attr( $settings['sb_list_id'] ); ?>" />
+							</p>
+						</td>
+					</tr>
+					<tr id="zeko-nl-mcfields">
+						<th scope="row"><?php esc_html_e( 'Mailchimp credentials', 'zeko-core' ); ?></th>
+						<td>
+							<p>
+								<label for="zeko-nl-mckey">
+									<?php esc_html_e( 'API key', 'zeko-core' ); ?>
+								</label><br />
+								<input id="zeko-nl-mckey" class="regular-text" type="password" name="<?php echo esc_attr( self::SETTINGS_KEY . '[mc_api_key]' ); ?>" value="<?php echo esc_attr( $settings['mc_api_key'] ); ?>" autocomplete="off" placeholder="xxxxxxxxxxxxxxxxxxxx-us12" />
+							</p>
+							<p>
+								<label for="zeko-nl-mclist">
+									<?php esc_html_e( 'List ID', 'zeko-core' ); ?>
+								</label><br />
+								<input id="zeko-nl-mclist" class="regular-text" type="text" name="<?php echo esc_attr( self::SETTINGS_KEY . '[mc_list_id]' ); ?>" value="<?php echo esc_attr( $settings['mc_list_id'] ); ?>" />
 							</p>
 						</td>
 					</tr>
@@ -664,7 +755,8 @@ final class Zeko_Core_Newsletter {
 			var host = document.getElementById('zeko-nl-host');
 			var port = document.getElementById('zeko-nl-port');
 			var enc = document.getElementById('zeko-nl-enc');
-			var sb = document.getElementById('zeko-nl-sbfields');
+			var si = document.getElementById('zeko-nl-sbfields');
+			var mc = document.getElementById('zeko-nl-mcfields');
 			var prov = document.getElementById('zeko-nl-provider');
 
 			function fill() {
@@ -678,8 +770,9 @@ final class Zeko_Core_Newsletter {
 			}
 
 			function toggleSb() {
-				if (!sb) return;
-				sb.style.display = prov && prov.value === 'sendinblue' ? '' : 'none';
+				if (!si) return;
+				si.style.display = prov && prov.value === 'sendinblue' ? '' : 'none';
+				if (mc) mc.style.display = prov && prov.value === 'mailchimp' ? '' : 'none';
 			}
 
 			if (preset) preset.addEventListener('change', fill);
