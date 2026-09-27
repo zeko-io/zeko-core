@@ -458,6 +458,13 @@ final class Zeko_Core_Notifications {
 			return;
 		}
 
+		// When the header notifications widget has already rendered (the theme
+		// top bar fires zeko_header_top_bar), skip the floating footer bell so
+		// users never see two bells.
+		if ( apply_filters( 'zeko_core_suppress_footer_bell', false ) ) {
+			return;
+		}
+
 		$ajax_url = admin_url( 'admin-ajax.php' );
 		$nonce    = wp_create_nonce( 'zeko_core_notifications_nonce' );
 		$sources  = $this->get_sources();
